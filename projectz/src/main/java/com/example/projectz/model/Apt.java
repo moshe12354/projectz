@@ -50,4 +50,19 @@ public class Apt implements Serializable {
         this.pricePerMeter = pricePerMeter;
         this.type = type;
     }
+
+    public void setCity(@NotBlank @Length(max = 50) String city) {
+    }
+
+    public void setStreet(@NotBlank @Length(min = 1 ,max = 50) String street) {
+    }
+
+    public void setSize(@NotBlank Integer size) {
+    }
+
+    public void setPricePerMeter(@NotBlank @Min(100) Integer pricePerMeter) {
+    }
+
+    public void setType(@NotBlank String type) {
+    }
 }
