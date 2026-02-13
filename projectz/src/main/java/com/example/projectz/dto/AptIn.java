@@ -42,7 +42,7 @@ public class AptIn implements Serializable {
         );
     }
 
-    public void updateStudent(Apt apt) {
+    public void updateApt(Apt apt) {
         apt.setCity(city);
         apt.setStreet(street);
         apt.setSize(size);
