@@ -42,10 +42,45 @@ public class AptController {
         return new ResponseEntity<>(updateApt, HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/id/{id}")
     public ResponseEntity<?> deleteApt(@PathVariable Long id) {
         Optional<Apt> dbApt = AptService.findById(id);
         AptService.delete(dbApt.get());
         return new ResponseEntity<>("DELETED", HttpStatus.OK);
     }
+
+    @GetMapping("/city/{city}")
+    public ResponseEntity<?> ByCity(@PathVariable String city) {
+        String tempCity = city;
+        return new ResponseEntity<>(AptService.findByCity(tempCity), HttpStatus.OK);
+    }
+
+    @GetMapping("/street/{street}")
+        public ResponseEntity<?> ByStreet(@PathVariable String street) {
+        String tempStreet = street;
+            return new ResponseEntity<>(AptService.findByStreet(tempStreet), HttpStatus.OK);
+    }
+
+    @GetMapping ("/type/{type}")
+    public ResponseEntity<?> ByType(@PathVariable String type) {
+        String tempType = type;
+        return new ResponseEntity<>(AptService.findByType(tempType), HttpStatus.OK);
+    }
+
+    @GetMapping("/pricePerMeter/{pricePerMeter}")
+    public ResponseEntity<?> ByPricePerMeter(@PathVariable int pricePerMeter) {
+        int tempPrice = pricePerMeter;
+        return new ResponseEntity<>(AptService.findByPricePerMeter(tempPrice), HttpStatus.OK);
+    }
+
+    @GetMapping("/cheapest")
+    public ResponseEntity<?> cheapest() {
+        return new ResponseEntity<>(AptService.findByTheCheapest(), HttpStatus.OK);
+    }
+
+    @GetMapping("/expensive")
+    public ResponseEntity<?> expensive() {
+        return new ResponseEntity<>(AptService.findByTheMostExpensive(), HttpStatus.OK);
+    }
+
 }

@@ -28,4 +28,43 @@ public class AptService {
     public void delete(Apt apt) {
         repository.delete(apt);
     }
+
+
+    // סתם
+    public void deleteById (Long id) {
+        repository.deleteById(id);
+    }
+
+
+
+
+
+    // הוספות
+    public Optional<Apt> findByCity (String city) {
+        return repository.findByCity(city);
+    }
+
+    public Optional<Apt> findByStreet (String street) {
+        return repository.findByStreet(street);
+    }
+
+    public Optional<Apt> findByType (String type) {
+        return repository.findByType(type);
+    }
+    public Optional<Apt> findByPricePerMeter (int pricePerMeter) {
+        return repository.findByPricePerMeter(pricePerMeter);
+    }
+    public Optional<Apt> findByTheMostExpensive () {
+        return repository.findTopByOrderByPricePerMeterDesc();
+    }
+    public Optional<Apt> findByTheCheapest () {
+        return repository.findTopByOrderByPricePerMeterAsc();
+    }
+
+
+
+
+
+
+
 }
