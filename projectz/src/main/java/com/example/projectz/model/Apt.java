@@ -51,18 +51,29 @@ public class Apt implements Serializable {
         this.type = type;
     }
 
-    public void setCity(@NotBlank @Length(max = 50) String city) {
+    public void setCity(@NotBlank @Length(max = 50) String city) { this.city = city; }
+    public void setStreet(@NotBlank @Length(min = 1 ,max = 50) String street) { this.street = street; }
+    public void setSize(@NotBlank Integer size) { this.size = size; }
+    public void setPricePerMeter(@NotBlank @Min(100) Integer pricePerMeter) { this.pricePerMeter = pricePerMeter; }
+    public void setType(@NotBlank String type) { this.type = type; }
+
+    public String getCity() {
+        return city;
     }
 
-    public void setStreet(@NotBlank @Length(min = 1 ,max = 50) String street) {
+    public String getStreet() {
+        return street;
     }
 
-    public void setSize(@NotBlank Integer size) {
+    public Integer getSize() {
+        return size;
     }
 
-    public void setPricePerMeter(@NotBlank @Min(100) Integer pricePerMeter) {
+    public Integer getPricePerMeter() {
+        return pricePerMeter;
     }
 
-    public void setType(@NotBlank String type) {
+    public String getType() {
+        return type;
     }
 }

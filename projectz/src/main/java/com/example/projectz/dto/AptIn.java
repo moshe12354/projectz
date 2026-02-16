@@ -49,4 +49,44 @@ public class AptIn implements Serializable {
         apt.setPricePerMeter(pricePerMeter);
         apt.setType(type);
     }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
+    public Integer getPricePerMeter() {
+        return pricePerMeter;
+    }
+
+    public void setPricePerMeter(Integer pricePerMeter) {
+        this.pricePerMeter = pricePerMeter;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 }
